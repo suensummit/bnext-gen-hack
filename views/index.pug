@@ -5,6 +5,7 @@ block body_content
 	.main_dialog.col-lg-9.col-sm-9
 		.dialog_text
 			#content
+			#next.fa.fa-chevron-down.right
 
 	.main_dialog.col-lg-9.col-sm-9
 		.dialog_option
@@ -17,17 +18,25 @@ block body_content
 
 block body_script
 	script.
+		var step = 0;
 		var dialog = [
 			"xxx",
-			""
+			"yyy",
+			"zzz"
 		];
 
 		console.log(dialog);
 
-		function showDialog() {
-			$('#content').html(dialog[0]);
+		function showDialog(step) {
+			$('#content').html(dialog[step]);
 		}
 
 		$(function() {
-			showDialog();
+			showDialog(step);
 		}); 
+
+		$("#next").click(function(e) {
+			step += 1;
+			showDialog(step);
+			e.preventDefault();
+		});
