@@ -17,20 +17,17 @@ block body_content
 
 block body_script
 	script.
-		function showDatetime() {
-			$('#datetime').html(
-				sprintf("%s %s", 
-					new moment().format('YYYY-MM-DD HH:mm:ss'),
-					new moment().format('dddd, MMMM Do YY')
-				)
-			);
-			setTimeout(showDatetime, 1000);
+		var dialog = [
+			"xxx",
+			""
+		];
+
+		console.log(dialog);
+
+		function showDialog() {
+			$('#content').html(dialog[0]);
 		}
 
 		$(function() {
-			showDatetime();
+			showDialog();
 		}); 
-
-		$(function() {
-		
-		})
