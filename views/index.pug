@@ -2,27 +2,28 @@ extends layout
 
 block body_content
 
+	//- .main_dialog.col-lg-9.col-sm-9
+	//- 	.dialog_option
+	//- 		#option 
+
 	.main_dialog.col-lg-9.col-sm-9
-		.dialog_text
+		#next.dialog_text
 			#content
-			#next.fa.fa-chevron-down.right
+			.fa.fa-chevron-down
 
-	.main_dialog.col-lg-9.col-sm-9
-		.dialog_option
-			#option 
-
+	img#story
 
 	img(src='/images/foreground.png')
 
-	.progress.col-lg-12.col-sm-12
+	//- .progress.col-lg-12.col-sm-12
 
 block body_script
 	script.
-		var step = 0;
+		var step = -3;
 		var dialog = [
-			"xxx",
-			"yyy",
-			"zzz"
+			"資深月老：你這樣不行，他們又不是法律上的配偶或家屬，不能讓他們簽手術或急救同意書啦！",
+			"新手月老：現在立法院已經有修改民法親屬編的草案，新增「同性婚約，由雙方當事人自行訂定」的條文，而且增列「平等適用原則」，讓同志婚姻也適用《民法》中關於夫妻、配偶、父母子女的相關規定。法案通過之後，同志就是法律上的配偶了。",
+			"資深月老：不行，我不同意，不能給聖杯。這法案現在才到朝野協商而已，到時候還要排隊等二讀，現在立法院已經一堆法案，我看是要審到這案子是遙遙無期啦。"
 		];
 
 		console.log(dialog);
@@ -37,6 +38,16 @@ block body_script
 
 		$("#next").click(function(e) {
 			step += 1;
+			console.log(step);
 			showDialog(step);
+			if (step == -2) {
+					$("#story").attr("src", "/images/pray.png");
+				} else if (step == -1) {
+					$("#story").attr("src", "/images/demo.jpg");
+				} else if (step == 0) {
+					$("#story").attr("src", "/images/angry.jpg");
+				} else if (step == 1) {
+					$("#story").attr("src", "/images/askold.jpg");
+				};
 			e.preventDefault();
 		});
