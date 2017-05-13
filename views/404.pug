@@ -1,0 +1,26 @@
+extends layout
+
+block body_content
+	.container.page
+		.row
+			.col-xs-12
+				h2 Oops!
+				h2 
+					| 
+					span#sec
+					| 秒後回到首頁
+
+block body_script
+	script.
+		var timeout_redirect = 5;
+		function redirect() {
+			if (timeout_redirect-- <= 0) {
+				location.href = '/';
+			}
+			else {
+				$('#sec').html(' ' + timeout_redirect + ' ')
+				setTimeout(redirect, 1000);
+			}
+		}
+
+		redirect();

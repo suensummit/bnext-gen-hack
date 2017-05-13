@@ -1,0 +1,23 @@
+extends layout
+
+block body_content
+	.main_dialog.col-lg-9.col-sm-9
+		.dialog_text
+		.dialog_option 
+			#datetime
+
+block body_script
+	script.
+		function showDatetime() {
+			$('#datetime').html(
+				sprintf("%s %s", 
+					new moment().format('YYYY-MM-DD HH:mm:ss'),
+					new moment().format('dddd, MMMM Do YY')
+				)
+			);
+			setTimeout(showDatetime, 1000);
+		}
+
+		$(function() {
+			showDatetime();
+		}); 

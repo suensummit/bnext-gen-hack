@@ -1,0 +1,25 @@
+{
+	"name": "bnext-gen-hack",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"express": 			"4.*",
+		"cookie-parser": 	"*",
+		"body-parser": 		"*",
+		"multer": 			"*", 
+		"express-session": 	"*",
+		"express-useragent":"*",
+		"serve-favicon": 	"*",
+		"morgan": 			"*",
+		"pug": 				"2.0.0-beta6",
+		"stylus": 			"*",
+		"express-minify": 	"*",
+
+		"moment": 			"*",
+		"q": 				"*",
+		"winston": 			"*"
+	}
+}
