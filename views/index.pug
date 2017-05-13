@@ -25,6 +25,10 @@ block body_script
 		var dialog = [
 			"2017 年春，David 與他的伴侶 Tony 一同來到廟裡向月老祈求⋯⋯",
 			"祢要給他們什麼結果呢？",
+			"祢要給他們什麼結果呢？",
+			"資深月老：哈哈，就說吧，同志伴侶就不應該是配偶，婚姻應該只侷限於一男一女之間呀（手舞足蹈）",
+			"祢要給他們什麼結果呢？",
+			"祢要給他們什麼結果呢？",
 			"資深月老：你這樣不行，他們又不是法律上的配偶或家屬，不能讓他們簽手術或急救同意書啦！",
 			"新手月老：現在立法院已經有修改民法親屬編的草案，新增「同性婚約，由雙方當事人自行訂定」的條文，而且增列「平等適用原則」，讓同志婚姻也適用《民法》中關於夫妻、配偶、父母子女的相關規定。法案通過之後，同志就是法律上的配偶了。",
 			"資深月老：不行，我不同意，不能給聖杯。這法案現在才到朝野協商而已，到時候還要排隊等二讀，現在立法院已經一堆法案，我看是要審到這案子是遙遙無期啦。"
@@ -47,13 +51,22 @@ block body_script
 			if (step == 0) {
 					$("#story").attr("src", "/images/pray.png");
 				} else if (step == 1) {
-					$("#ask").attr("src", "/images/ask.png");
+					$("#ask").attr("src", "");
 				} else if (step == 2) {
+					$("#ask").attr("src", "/images/ask.png");
+				} else if (step == 3) {
+					$("body").css("background-image", "url(/images/joy.jpg)");
+					$("#ask").attr("src", "");
+				} else if (step == 4) {
+					$("body").css("background-image", "url(/images/background.jpg)");
+				} else if (step == 5) {
+					$("#ask").attr("src", "/images/ask.png");
+				} else if (step == 6) {
 					$("body").css("background-image", "url(/images/angry.jpg)");
 					$("#ask").attr("src", "");
-				} else if (step == 3) {
+				} else if (step == 7) {
 					$("body").css("background-image", "url(/images/askold.jpg)");
-				} else if (step == 4) {
+				} else if (step == 8) {
 					$("body").css("background-image", "url(/images/angry.jpg)");
 				};
 			e.preventDefault();
