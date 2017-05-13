@@ -43,11 +43,13 @@ block body_script
 			if (step == -2) {
 					$("#story").attr("src", "/images/pray.png");
 				} else if (step == -1) {
-					$("#story").attr("src", "/images/demo.jpg");
+					$("body").css("background-image", "url(/images/demo.jpg)");
 				} else if (step == 0) {
-					$("#story").attr("src", "/images/angry.jpg");
+					$("body").css("background-image", "url(/images/angry.jpg)");
 				} else if (step == 1) {
-					$("#story").attr("src", "/images/askold.jpg");
+					$("body").css("background-image", "url(/images/askold.jpg)");
+				} else if (step == 2) {
+					$("body").css("background-image", "url(/images/angry.jpg)");
 				};
 			e.preventDefault();
 		});
