@@ -13,7 +13,9 @@ block body_content
 
 	img#story
 
-	img(src='/images/foreground.png')
+	img#ask
+
+	img#fore(src='/images/foreground.png')
 
 	//- .progress.col-lg-12.col-sm-12
 
@@ -45,11 +47,10 @@ block body_script
 			if (step == 0) {
 					$("#story").attr("src", "/images/pray.png");
 				} else if (step == 1) {
-					$("body").css("background-image", "url(/images/demo.jpg)");
-					$("#story").attr("src", "");
+					$("#ask").attr("src", "/images/ask.png");
 				} else if (step == 2) {
 					$("body").css("background-image", "url(/images/angry.jpg)");
-					$("#story").attr("src", "/images/pray.png");
+					$("#ask").attr("src", "");
 				} else if (step == 3) {
 					$("body").css("background-image", "url(/images/askold.jpg)");
 				} else if (step == 4) {
